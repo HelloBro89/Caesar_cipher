@@ -1,4 +1,6 @@
-module.exports = function parsingParams() {
+module.exports = parsingParams();
+
+function parsingParams() {
     let obj = {};
     if (process.argv.length > 2) {
 
@@ -14,7 +16,7 @@ module.exports = function parsingParams() {
                 }
             } else if (process.argv[i] === "-s" || process.argv[i] === "--shift") {
                 if (Number.isInteger(Number(process.argv[i + 1])) === true) {
-                    obj.shift = process.argv[i + 1];
+                    obj.shift = Number(process.argv[i + 1]);
                     ++i;
                 } else {
                     process.stderr.write(`После опции "-s" или "--shift" необходимо ввести целое число.`)
@@ -43,5 +45,5 @@ module.exports = function parsingParams() {
         process.stderr.write(`Проверьте введены ли следующие опции: "-a/--action", либо "-s/--shift".`)
         process.exit(1);
     }
-    console.log(obj)
+    return obj;
 }
