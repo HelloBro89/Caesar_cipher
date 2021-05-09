@@ -14,20 +14,22 @@ if (objectParams.input == null && objectParams.output == null) {
 
 } else if (objectParams.input !== null && objectParams.output == null) {
 
-    if (fs.existsSync(pathInput)) {
+    fs.access(pathInput, fs.F_OK, (err) => {
+        if (err) {
+            console.error(`Error: У вас отсутствует файл "input.txt" в текущей папке!`);
+            process.exit(2);
+        }
         let readableStream = fs.createReadStream(objectParams.input, "utf8");
         readableStream.pipe(transform).pipe(process.stdout);
-    } else {
-        console.error(`Error: У вас отсутствует файл "input.txt" в текущей папке! `)
-    }
-
+    });
 } else if (objectParams.input !== null && objectParams.output !== null) {
-
-    if (fs.existsSync(pathInput)) {
+    fs.access(pathInput, fs.F_OK, (err) => {
+        if (err) {
+            console.error(`Error: У вас отсутствует файл "input.txt" в текущей папке!`);
+            process.exit(2);
+        }
         let readableStream = fs.createReadStream(objectParams.input, "utf8");
         let writeableStream = fs.createWriteStream(objectParams.output, { flags: "a" });
         readableStream.pipe(transform).pipe(writeableStream);
-    } else {
-        console.error(`Error: У вас отсутствует файл "input.txt" в текущей папке!`)
-    };
+    })
 };

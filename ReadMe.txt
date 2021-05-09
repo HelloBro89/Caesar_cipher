@@ -11,7 +11,7 @@
 3. Приложение готово к использованию
 
 *** Команды для начала работы
-В командной строке нужно написать "node casear_app.js" <options>. Где OPTIONS принимают
+В командной строке нужно написать "node caesar_app.js" <options>. Где OPTIONS принимают
 следующие параметры:
 1) -s или --shift <число>: сдвигает символ на указанное целочисленное(без дробной части) число отрицаельное или положительное  (*обязательный параметр)
 2) -а или --action <encode или decode>: указывает приложению зашифровать или расшифровать текст (*обязательный параметр)
@@ -35,7 +35,7 @@
 This is secret. Message about "_" symbol!
 
 ввод в командной строке :
-$ node casear_app.js -a encode -s 7 -i "./input.txt" -o "./output.txt
+$ node caesar_app -a encode -s 7 -i "./input.txt" -o "./output.txt
 
 в файле "output.txt" появиться:
 Aopz pz zljyla. Tlzzhnl hivba "_" zftivs!
