@@ -9,7 +9,12 @@ module.exports = function (text) {
     let finishSmallRegister = 123;
 
     objectParams.shift = objectParams.action === "decode" ? objectParams.shift - (objectParams.shift * 2) : objectParams.shift;
-    objectParams.shift = (objectParams.shift < 0) ? 26 - (objectParams.shift - (objectParams.shift * 2)) : objectParams.shift;
+
+    if (objectParams.shift < 0 && objectParams.shift < -26) {
+        objectParams.shift = 26 - ((objectParams.shift - (objectParams.shift * 2)) % 26)
+    } else if (objectParams.shift < 0) {
+        objectParams.shift = 26 - (objectParams.shift - (objectParams.shift * 2))
+    }
 
     for (let i = 0; i < text.length; i++) {
 
