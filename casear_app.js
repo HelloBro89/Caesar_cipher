@@ -1,4 +1,5 @@
 const fs = require("fs");
+const { output } = require("./parsingParams");
 const objectParams = require("./parsingParams");
 const TransformStream = require('./transform');
 
@@ -18,4 +19,6 @@ if (objectParams.input == null && objectParams.output == null) {
     let readableStream = fs.createReadStream(objectParams.input, "utf8");
     let writeableStream = fs.createWriteStream(objectParams.output, { flags: "a" });
     readableStream.pipe(transform).pipe(writeableStream);
+} else {
+    console.log(`Проверьте наличия файла "input.txt" или "output.txt" в текущей папке.`)
 }
