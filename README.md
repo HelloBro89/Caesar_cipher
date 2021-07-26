@@ -39,7 +39,7 @@ $ node caesar_app -a encode -s 7 -i "./input.txt" -o "./output.txt
 in the file "output.txt" will appear:
 Aopz pz zljyla. Tlzzhnl hivba "\_" zftivs!
 
-                 **or**
+                 or
 
 command line input :
 $ node caesar_app -a encode -s 7
