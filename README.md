@@ -15,10 +15,12 @@ only letters of the Latin alphabet in upper or lower case (characters and spaces
 On the command line, you need to write "node caesar_app.js" <options>. Where OPTIONS accept
 the following parametrs:
 
+```
 1. -s or --shift <number>: shifts a character by the specified integer (no fractional part) negative / positive number (**this is a required parameter**)
 2. -а or --action <encode or decode>: instructs the application to encrypt or decrypt the text (**this is a required parameter**)
 3. 3. -i or --input <./input> : where "./input.txt" file name with information, you need decrypt/encrypt (**this is an optional parameter**)
-4. -o or --output <./output> : где "./output.txt" the name of the file into which the encrypted / decrypted, will be written information(**this is an optional parameter**)
+4. -o or --output <./output> : where "./output.txt" the name of the file into which the encrypted / decrypted, will be written information(**this is an optional parameter**)
+```
 
 _P.s. points 1 and 2 must be fulfilled_
 
